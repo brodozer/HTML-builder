@@ -1,11 +1,11 @@
 const path = require('path');
 const fs = require('fs');
-const folder = path.join(__dirname + '/secret-folder');
+const folder = path.join(__dirname, 'secret-folder');
 
 
 fs.readdir(folder, (err, files) => {
 	files.forEach(file => {
-		let filePath = folder + '/' + file;
+		let filePath = path.join(folder, file);
     	fs.stat(filePath, (err, stats) => {
     		if(stats.isFile()) {
     			let ext = path.extname(filePath);
