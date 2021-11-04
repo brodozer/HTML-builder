@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (input) => {
-	if(input === 'exit') {
+	if(input.trim().toLowerCase() === 'exit') {
 		rl.close();
 	} else {
 		fs.appendFile(path.join(__dirname, 'text.txt'), `${input}\n`, function (err) {
